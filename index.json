@@ -1,0 +1,64 @@
+var dscc = window.dscc;
+
+function drawViz(data) {
+  const container = document.createElement("div");
+  container.innerHTML = `
+    <style>
+      .user-card {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #e0f2ff, #f9e0ff);
+        border-radius: 16px;
+        padding: 18px;
+        width: 240px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        position: relative;
+      }
+      .profile-pic img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+      }
+      .badge {
+        position: absolute;
+        right: 26px;
+        bottom: 28px;
+        width: 22px;
+        height: 22px;
+        background: #FFD700;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+      }
+      .user-card h2 {
+        margin: 6px 0 12px;
+        font-size: 20px;
+        color: #222;
+        font-weight: 700;
+      }
+      .user-card h3 {
+        margin: 0;
+        font-size: 13px;
+        color: #555;
+      }
+    </style>
+    <div class="user-card">
+      <h3>Hello,</h3>
+      <h2>${data.tables.DEFAULT[0].last_name}</h2>
+      <div class="profile-pic">
+        <img src="${data.tables.DEFAULT[0].photo}" alt="Profile">
+        <div class="badge"></div>
+      </div>
+    </div>
+  `;
+
+  const root = document.getElementById("container");
+  root.innerHTML = "";
+  root.appendChild(container);
+}
+
+// Tell Looker Studio how to call our viz
+dscc.subscribeToData(drawViz, { transform: dscc.tableTransform });
