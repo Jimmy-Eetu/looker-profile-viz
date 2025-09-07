@@ -1,0 +1,22 @@
+{
+  "name": "User Profile Card",
+  "description": "Displays a circular profile picture and last name for the current user",
+  "resources": {
+    "js": [
+      "index.js"
+    ]
+  },
+  "fields": [
+    {
+      "id": "last_name",
+      "name": "Last Name",
+      "type": "DIMENSION"
+    },
+    {
+      "id": "photo",
+      "name": "Converted Photo URL",
+      "type": "DIMENSION"
+    }
+  ],
+  "style": []
+}
