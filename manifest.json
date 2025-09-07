@@ -1,7 +1,7 @@
 {
-  "name": "User Profile Card",
+  "name": "Hello World Viz",
   "organization": "DemoOrg",
-  "description": "Displays a circular profile picture and last name",
+  "description": "Minimal test viz",
   "logoUrl": "https://lookerstudio.google.com/images/datastudio.png",
   "supportUrl": "https://lookerstudio.google.com",
   "resources": {
@@ -10,19 +10,7 @@
     ]
   },
   "fields": {
-    "dimensions": [
-      {
-        "id": "last_name",
-        "name": "Last Name",
-        "type": "TEXT"
-      },
-      {
-        "id": "photo",
-        "name": "Converted Photo URL",
-        "type": "TEXT"
-      }
-    ],
+    "dimensions": [],
     "metrics": []
   }
 }
-
